@@ -1,6 +1,6 @@
 name: VideoFlow
 options:
-  bundleIdPrefix: com.videoflow
+  bundleIdPrefix: com.nobaclip
   deploymentTarget:
     iOS: "17.0"
   createIntermediateGroups: true
@@ -34,7 +34,7 @@ targets:
         product: ClerkConvex
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.videoflow.app
+        PRODUCT_BUNDLE_IDENTIFIER: com.nobaclip.app
         PRODUCT_NAME: VideoFlow
         MARKETING_VERSION: 2.5.0
         CURRENT_PROJECT_VERSION: 1
