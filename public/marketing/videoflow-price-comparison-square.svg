@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">VideoFlow price comparison</title>
+  <desc id="desc">Year-one software cost for a five-person team comparing Loom Business, Tella Premium, Descript Creator, and VideoFlow.</desc>
+  <defs>
+    <linearGradient id="background" x1="70" y1="20" x2="1120" y2="1180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="0.58" stop-color="#f8f8ff"/>
+      <stop offset="1" stop-color="#eeebff"/>
+    </linearGradient>
+    <linearGradient id="logo" x1="5" y1="3" x2="67" y2="75" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#785fff"/>
+      <stop offset="1" stop-color="#6247ec"/>
+    </linearGradient>
+    <linearGradient id="winner" x1="360" y1="0" x2="710" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#745cff"/>
+      <stop offset="1" stop-color="#5d45e9"/>
+    </linearGradient>
+    <filter id="shadow" x="-12%" y="-20%" width="124%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#4b4f7a" flood-opacity="0.10"/>
+    </filter>
+    <filter id="violetShadow" x="-30%" y="-50%" width="160%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#6d5bfc" flood-opacity="0.27"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1200" fill="url(#background)"/>
+  <path d="M836 0h364v356c-100 12-200 52-294 121-66 49-124 69-174 61 118-98 154-226 104-538Z" fill="#ece9ff" opacity="0.58"/>
+  <path d="M0 962c154 67 278 118 448 78 164-39 305-22 441 52 107 58 210 82 311 73v35H0Z" fill="#e2ddff" opacity="0.75"/>
+  <path d="M0 1018c168 72 310 97 459 58 145-39 283-20 414 51 121 66 230 80 327 61v12H0Z" fill="#cfc7ff" opacity="0.62"/>
+
+  <g transform="translate(70 54)">
+    <rect width="76" height="76" rx="21" fill="url(#logo)"/>
+    <path d="M18 41c4.5 0 5.5-12 10.3-12s5.6 18 10.8 18c4.8 0 5.6-18 10.6-18 4.3 0 5.4 12 9.3 12" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="164" y="111" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="-2.2" fill="#15172b">Video<tspan fill="#6d5bfc">Flow</tspan></text>
+
+  <text x="70" y="242" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="88" font-weight="700" letter-spacing="-4.6" fill="#101224">Stop renting your</text>
+  <text x="70" y="334" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="88" font-weight="700" letter-spacing="-4.6" fill="#101224">video stack.</text>
+  <text x="73" y="407" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="34" font-weight="500" letter-spacing="-1.1" fill="#4f586f">Year-one software cost for a 5-person team</text>
+
+  <g filter="url(#shadow)">
+    <rect x="50" y="474" width="1100" height="118" rx="25" fill="#fff"/>
+    <rect x="50" y="608" width="1100" height="118" rx="25" fill="#fff"/>
+    <rect x="50" y="742" width="1100" height="118" rx="25" fill="#fff"/>
+    <rect x="50" y="876" width="1100" height="134" rx="25" fill="#fff" stroke="#ded8ff" stroke-width="2"/>
+  </g>
+
+  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+    <text x="90" y="546" font-size="29" font-weight="700" letter-spacing="-0.9" fill="#15172b">Loom Business</text>
+    <rect x="360" y="505" width="520" height="56" rx="15" fill="#f0f1f8"/>
+    <rect x="360" y="505" width="390" height="56" rx="15" fill="#dfe1f1"/>
+    <rect x="910" y="500" width="207" height="66" rx="17" fill="#f4f4fa"/>
+    <text x="1014" y="542" text-anchor="middle" font-size="27" font-weight="700" letter-spacing="-0.7" fill="#15172b">$1,080 / year</text>
+
+    <text x="90" y="680" font-size="29" font-weight="700" letter-spacing="-0.9" fill="#15172b">Tella Premium</text>
+    <rect x="360" y="639" width="520" height="56" rx="15" fill="#f0f1f8"/>
+    <rect x="360" y="639" width="412" height="56" rx="15" fill="#dfe1f1"/>
+    <rect x="910" y="634" width="207" height="66" rx="17" fill="#f4f4fa"/>
+    <text x="1014" y="676" text-anchor="middle" font-size="27" font-weight="700" letter-spacing="-0.7" fill="#15172b">$1,140 / year</text>
+
+    <text x="90" y="814" font-size="29" font-weight="700" letter-spacing="-0.9" fill="#15172b">Descript Creator</text>
+    <rect x="360" y="773" width="520" height="56" rx="15" fill="#f0f1f8"/>
+    <rect x="360" y="773" width="520" height="56" rx="15" fill="#dfe1f1"/>
+    <rect x="910" y="768" width="207" height="66" rx="17" fill="#f4f4fa"/>
+    <text x="1014" y="810" text-anchor="middle" font-size="27" font-weight="700" letter-spacing="-0.7" fill="#15172b">$1,440 / year</text>
+
+    <text x="90" y="955" font-size="29" font-weight="700" letter-spacing="-0.9" fill="#6d5bfc">VideoFlow</text>
+    <rect x="360" y="914" width="350" height="58" rx="16" fill="#f0efff"/>
+    <rect x="360" y="914" width="72" height="58" rx="16" fill="url(#winner)" filter="url(#violetShadow)"/>
+    <rect x="742" y="909" width="177" height="68" rx="17" fill="#f1efff"/>
+    <text x="830" y="952" text-anchor="middle" font-size="29" font-weight="700" letter-spacing="-0.7" fill="#5f48eb">$197 once</text>
+    <path d="M940 945c20-9 39-9 56 0" fill="none" stroke="#6d5bfc" stroke-width="4" stroke-linecap="round"/>
+    <path d="m945 932-16 13 17 10" fill="none" stroke="#6d5bfc" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1004" y="907" width="127" height="70" rx="17" fill="#fff" stroke="#6d5bfc" stroke-width="3"/>
+    <text x="1067.5" y="932" text-anchor="middle" font-size="12" font-weight="800" letter-spacing="0.6" fill="#6d5bfc">YOU OWN</text>
+    <text x="1067.5" y="952" text-anchor="middle" font-size="12" font-weight="800" letter-spacing="0.6" fill="#6d5bfc">THE CODE</text>
+    <path d="m1068 961 3.1 6.4 7 1-5 4.9 1.2 6.9-6.3-3.3-6.2 3.3 1.2-6.9-5-4.9 6.9-1Z" fill="#6d5bfc"/>
+  </g>
+
+  <text x="70" y="1094" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="500" letter-spacing="-0.25" fill="#59627a">Listed software prices × 5 users × 12 months. VideoFlow infrastructure and optional</text>
+  <text x="70" y="1125" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" font-weight="500" letter-spacing="-0.25" fill="#59627a">services not included. Checked July 2026.</text>
+</svg>

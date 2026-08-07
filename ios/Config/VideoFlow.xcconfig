@@ -1,0 +1,5 @@
+// Public client configuration only. Put installation values in the ignored
+// VideoFlow.local.xcconfig so this file remains safe to commit.
+VIDEOFLOW_CONVEX_URL =
+VIDEOFLOW_CLERK_PUBLISHABLE_KEY =
+#include? "VideoFlow.local.xcconfig"

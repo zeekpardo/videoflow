@@ -1,0 +1,72 @@
+name: VideoFlow
+options:
+  bundleIdPrefix: com.videoflow
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+packages:
+  ConvexMobile:
+    url: https://github.com/get-convex/convex-swift
+    from: 0.8.1
+  Clerk:
+    url: https://github.com/clerk/clerk-ios
+    from: 1.3.2
+  ClerkConvex:
+    url: https://github.com/clerk/clerk-convex-swift
+    from: 0.1.0
+targets:
+  VideoFlow:
+    type: application
+    platform: iOS
+    sources:
+      - VideoFlow
+    configFiles:
+      Debug: Config/VideoFlow.xcconfig
+      Release: Config/VideoFlow.xcconfig
+    dependencies:
+      - package: ConvexMobile
+        product: ConvexMobile
+      - package: Clerk
+        product: ClerkKit
+      - package: Clerk
+        product: ClerkKitUI
+      - package: ClerkConvex
+        product: ClerkConvex
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.videoflow.app
+        PRODUCT_NAME: VideoFlow
+        MARKETING_VERSION: 2.5.0
+        CURRENT_PROJECT_VERSION: 1
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: YES
+    info:
+      path: VideoFlow/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: VideoFlow
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSCameraUsageDescription: VideoFlow uses the camera to record videos you choose to upload.
+        NSMicrophoneUsageDescription: VideoFlow uses the microphone while recording videos.
+        VIDEOFLOW_CONVEX_URL: $(VIDEOFLOW_CONVEX_URL)
+        VIDEOFLOW_CLERK_PUBLISHABLE_KEY: $(VIDEOFLOW_CLERK_PUBLISHABLE_KEY)
+schemes:
+  VideoFlow:
+    build:
+      targets:
+        VideoFlow: all
+    run:
+      config: Debug
+    archive:
+      config: Release

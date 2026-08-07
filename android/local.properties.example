@@ -1,0 +1,4 @@
+# Copy these values into local.properties. Keep sdk.dir from Android Studio.
+# Leave both blank to run the bundled preview workspace.
+VIDEOFLOW_CONVEX_URL=https://your-deployment.convex.cloud
+VIDEOFLOW_CLERK_PUBLISHABLE_KEY=pk_test_replace_me
