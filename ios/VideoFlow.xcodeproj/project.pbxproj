@@ -387,7 +387,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.videoflow.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nobaclip.app;
 				PRODUCT_NAME = VideoFlow;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -409,7 +409,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.videoflow.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nobaclip.app;
 				PRODUCT_NAME = VideoFlow;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
