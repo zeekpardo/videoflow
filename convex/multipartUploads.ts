@@ -20,6 +20,10 @@ import { mediaTypeEssence } from "../lib/media-format";
 const PART_SIZE_BYTES = 8 * 1024 * 1024;
 const SESSION_TTL_MS = 24 * 60 * 60 * 1_000;
 const MAX_PARTS = 10_000;
+// Object keys are UUID-based and never rewritten, so the browser can cache without
+// revalidating. This matters because R2 omits CORS headers on 304 responses, which
+// makes any revalidated cross-origin request fail the browser CORS check.
+const IMMUTABLE_CACHE_CONTROL = "public, max-age=31536000, immutable";
 
 function config() {
   const endpoint = process.env.R2_ENDPOINT;
@@ -62,7 +66,7 @@ export const begin = action({
     if (partCount > MAX_PARTS) throw new Error("File requires too many upload parts");
     const { client, bucket } = config();
     const key = `uploads/${randomUUID()}-${safeName(args.fileName)}`;
-    const created = await client.send(new CreateMultipartUploadCommand({ Bucket: bucket, Key: key, ContentType: args.contentType }));
+    const created = await client.send(new CreateMultipartUploadCommand({ Bucket: bucket, Key: key, ContentType: args.contentType, CacheControl: IMMUTABLE_CACHE_CONTROL }));
     if (!created.UploadId) throw new Error("R2 did not create an upload session");
     try {
       const sessionId = await ctx.runMutation(internal.multipartUploadData.createSession, {

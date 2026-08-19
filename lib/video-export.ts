@@ -681,7 +681,10 @@ export async function downloadUrl(url: string, filename: string, signal?: AbortS
 
   let response: Response;
   try {
-    response = await fetch(url, { signal });
+    // R2 omits CORS headers on 304 responses, so a revalidated request fails the
+    // browser CORS check even though the object is readable. Bypass the HTTP cache
+    // entirely for this one-shot download.
+    response = await fetch(url, { signal, cache: "no-store" });
   } catch (caught) {
     if (caught instanceof DOMException && caught.name === "AbortError") throw caught;
     throw new Error("The source file could not be read. Check the storage CORS configuration for this application domain.");
