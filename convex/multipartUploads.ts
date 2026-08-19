@@ -15,6 +15,7 @@ import { internal } from "./_generated/api";
 import type { Id } from "./_generated/dataModel";
 import { requireUser } from "./lib/auth";
 import { r2 } from "./r2";
+import { mediaTypeEssence } from "../lib/media-format";
 
 const PART_SIZE_BYTES = 8 * 1024 * 1024;
 const SESSION_TTL_MS = 24 * 60 * 60 * 1_000;
@@ -39,7 +40,10 @@ function config() {
 }
 
 function validContentType(contentType: string) {
-  return /^(video|audio|image)\/[a-z0-9.+-]+$/i.test(contentType);
+  // MediaRecorder emits parameterised types such as "video/webm;codecs=vp9,opus".
+  // Validate the container essence only. The unmodified value is still sent to R2 so
+  // multipart objects carry the same Content-Type as the single-PUT upload path.
+  return /^(video|audio|image)\/[a-z0-9.+-]+$/.test(mediaTypeEssence(contentType));
 }
 
 function safeName(fileName: string) {

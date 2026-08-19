@@ -24,3 +24,29 @@ describe("media container filenames", () => {
     expect(isSupportedVideoContainer("text/plain")).toBe(false);
   });
 });
+
+describe("multipart upload content-type validation", () => {
+  // Mirrors validContentType in convex/multipartUploads.ts. Browser MediaRecorder
+  // blobs carry codec parameters, and use-resumable-upload.ts forwards file.type
+  // unmodified, so validating the raw string rejected every real recording over the
+  // 32 MB multipart threshold.
+  const accepts = (contentType: string) =>
+    /^(video|audio|image)\/[a-z0-9.+-]+$/.test(mediaTypeEssence(contentType));
+
+  it("accepts parameterised MediaRecorder types", () => {
+    expect(accepts("video/webm;codecs=vp9,opus")).toBe(true);
+    expect(accepts("video/mp4;codecs=avc1.42E01E,mp4a.40.2")).toBe(true);
+    expect(accepts("audio/webm;codecs=opus")).toBe(true);
+  });
+
+  it("still accepts bare container types", () => {
+    expect(accepts("video/webm")).toBe(true);
+    expect(accepts("image/png")).toBe(true);
+  });
+
+  it("still rejects types outside the allowed families", () => {
+    expect(accepts("application/pdf")).toBe(false);
+    expect(accepts("text/html;charset=utf-8")).toBe(false);
+    expect(accepts("")).toBe(false);
+  });
+});
